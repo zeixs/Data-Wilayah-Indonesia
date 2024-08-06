@@ -12,7 +12,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('region_id')->constrained('regions')->cascadeOnDelete();
             $table->foreignId('province_id')->constrained('provinces')->cascadeOnDelete();
-            $table->bigInteger('code');
+            $table->string('code');
+            $table->index('code');
             $table->string('name');
         });
     }

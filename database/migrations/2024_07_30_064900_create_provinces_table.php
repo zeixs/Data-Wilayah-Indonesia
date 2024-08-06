@@ -11,7 +11,8 @@ return new class extends Migration
         Schema::create('provinces', function (Blueprint $table) {
             $table->id();
             $table->foreignId('region_id')->constrained('regions')->restrictOnDelete();
-            $table->bigInteger('code');
+            $table->string('code');
+            $table->index('code');
             $table->string('name');
         });
     }

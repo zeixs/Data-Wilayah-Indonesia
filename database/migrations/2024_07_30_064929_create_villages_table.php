@@ -13,7 +13,8 @@ return new class extends Migration {
             $table->foreignId('province_id')->constrained('provinces')->cascadeOnDelete();
             $table->foreignId('regency_id')->constrained('regencies')->cascadeOnDelete();
             $table->foreignId('district_id')->constrained('districts')->cascadeOnDelete();
-            $table->bigInteger('code');
+            $table->string('code');
+            $table->index('code');
             $table->string('name');
         });
     }
